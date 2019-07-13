@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places&key=AIzaSyAINEdV3qWd6UWIHBb_4I93bB-XPcp5-1k"></script>
+
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div id="locationField">
+      <div class="row">
+        <div class="col-4">
+          <input  id="autocomplete" class="form-control mb-5 mt-2" placeholder="Enter your address"  type="text"/>
+        </div>
+        <div class="col-4">
+          <select class="form-control  mb-5 mt-2" id="category">
+            <option value="">Select category</option>
+            <option value="food">food</option>
+            <option value="drinks">drinks</option>
+            <option value="coffee">coffee</option>
+            <option value="shops">shops</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <select class="form-control  mb-5 mt-2" id="radius">
+            <option value="">Select radius</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+        <input type="hidden" id="userLatAndLng" value="">
+      </div>
+    </div>
+    <div class="row" id="venuesWrapper"></div>
+  </div>
+
+
+</body>
+
+</html>
