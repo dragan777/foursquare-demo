@@ -49,7 +49,7 @@ const showVenuesForUserLocation = (position) =>  {
 
 //show venues for default lat and lng from config json
 const showDefaultVenues = () =>  {
-    latAndLngField.value = config.fourSquare.params.ll;
+    latAndLngField.value = config.fourSquare.explore.params.ll;
     fetchVenues();
 };
 
