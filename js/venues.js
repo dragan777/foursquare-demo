@@ -9,7 +9,7 @@ const config = {
           client_id:"VMVJRKPXD5COIE1TJO4E1EXWZHSJJTLW2XF0EUF0MIGWUNPN",
           client_secret:"JHRJL5ACM1FHT1RWGNZOJDZLYLNP1UMEAKQVPDTI3BHKNFEK",
           v:20180323,
-          limit: 30,
+          limit: 30,//TODO IMPLEMENT PAGINATION
           ll: "40.7243,-74.0018"
         }
       }
@@ -98,19 +98,24 @@ const buildVenueCard = (venue) => {
     const cardDiv = document.createElement('div');
     const h4 = document.createElement('h4');
     const currentVisitors = document.createElement('small');
+    const category = document.createElement('small');
     const a = document.createElement('a');
     const addressParagraph = document.createElement('p');
     // Append newly created elements into the DOM
     venuesWrapper.append(columnDiv);
     h4.append(a);
     h4.append(currentVisitors);
+    h4.append(category);
     cardDiv.append(h4);
+
     cardDiv.append(addressParagraph);
     columnDiv.append(cardDiv);
     // Set content and attributes
     addressParagraph.innerHTML = venue.location.formattedAddress.join(" | ");
     currentVisitors.innerHTML = "Current visitiors:" + venue.hereNow.count;
     currentVisitors.setAttribute("class", "badge badge-info");
+    category.innerHTML = "Category: " + venue.categories[0].name;
+    category.setAttribute("class", "p-1 badge badge-warning ml-2");
     a.innerHTML = venue.name;
     a.setAttribute('href',"#");//TODO DETAIL VENUE
     a.setAttribute('data-toggle',"modal");
